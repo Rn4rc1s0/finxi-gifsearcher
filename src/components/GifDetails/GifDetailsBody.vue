@@ -200,8 +200,8 @@ export default {
     }
     transition: color $transition, border-color $transition;
     &:hover {
-      color: palette(purple);
-      border-color: palette(purple);
+      color: palette(gray);
+      border-color: palette(gray);
     }
     
     &:last-child {

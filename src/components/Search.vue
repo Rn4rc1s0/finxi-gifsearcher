@@ -12,7 +12,7 @@
         @keyup.enter="onSearch"
         @focus="onFocus"
         @blur="onBlur"
-        placeholder="Search for sushi, soccer, spaceships, etc."
+        placeholder="Search for star+wars, luke, dart+vader, etc."
         class="search__input"
         spellcheck="false"
         type="text">
