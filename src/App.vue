@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import { mapMutations } from 'vuex'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    created () {
+      thios.SET_FAVORITES()
+    },
+
+    methods: {
+      ...mapMutations('giphy', [
+        'SET_FAVORITES'
+      ])
+    }
   }
-}
 </script>
 
-<style>
+<style lang='scss'>
+@import './scss/_variables.scss';
+@import './scss/_functions.scss';
+
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  color:palette(black);
+  font: {
+    family: $sans-serif;
+    size: 20px;
+  }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+
+.fireworks {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 20;
 }
 </style>
