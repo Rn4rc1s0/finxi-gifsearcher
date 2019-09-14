@@ -17,10 +17,10 @@ const state = {
 }
 
 const actions = {
-    SEARCH: ({ state, commit, rootState }, searchTerm) => {
-        return api.search(searchTerm)
-            .then(res => commit(SET_SEARCH_RESULTS, res.data.data))
-    }
+  SEARCH: ({ state, commit, rootState }, searchTerm) => {
+    return api.search(searchTerm)
+    	.then(res => commit(SET_SEARCH_RESULTS, res.data.data))
+  }
 }
 
 const mutations = {
@@ -50,36 +50,36 @@ const mutations = {
 	[ADD_FAVORITE] (state, favorite) {
 		state.favorites.push(favorite)
 		Vue.set(state.favoritesLookup, favorite.id, favorite)
-        ls.set('favoritesLookup', state.favoritesLookup)
+  	ls.set('favoritesLookup', state.favoritesLookup)
 	},
 
 	[REMOVE_FAVORITE] (state, favoriteId) {
 		state.favorites = state.favorites.filter(favorite => favorite.id !== favoriteId)
 		Vue.delete(state.favoritesLookup, favoriteId)
-        ls.set('favoritesLookup', state.favoritesLookup)
+  	ls.set('favoritesLookup', state.favoritesLookup)
 	}
 }
 
 const getters = {
-    searchResults: state => {
-        return state.searchResults
-    },
+  searchResults: state => {
+    return state.searchResults
+  },
 
-    favorites: state => {
-        return state.favorites
-    },
+  favorites: state => {
+    return state.favorites
+  },
 
-    favoritesLookup: state => {
-        return state.favoritesLookup
-    },
+  favoritesLookup: state => {
+    return state.favoritesLookup
+  },
 
-    activeGif: state => {
-        return state.activeGif
-    },
+  activeGif: state => {
+    return state.activeGif
+  },
 
-    activeGifIndex: state => {
-        return state.activeGifIndex
-    }
+  activeGifIndex: state => {
+    return state.activeGifIndex
+  }
 }
 
 export default {

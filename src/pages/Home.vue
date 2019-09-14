@@ -1,70 +1,71 @@
 <template>
-    <div
-        id="home"
-        class="home">
-        <h1 class="home__headline">
-            Finxi-GifSearcher
-        </h1>
+  <div
+    id="home"
+    class="home">
+    <img src="../assets/logo.png" alt="Logo StarWars" width="250px" height="200px">
+    <h1 class="home__headline">
+      Gifsearcher
+    </h1>
 
-        <search
-            v-model="searchTerm"
-            :searchTerm="searchTerm"
-            :focusSearch="true"
-            @onSearch="onSearch"
-            @onFocus="onFocus"
-            @onBlur="onBlur">
-        </search>
+    <search
+      v-model="searchTerm"
+      :searchTerm="searchTerm"
+      :focusSearch="true"
+      @onSearch="onSearch"
+      @onFocus="onFocus"
+      @onBlur="onBlur">
+    </search>
 
-        <transition name="fade">
-            <div v-show="searchActive" class="home__trending">
-                <h2>Trending</h2>
-                    <ul>
-                        <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'star+wars' }}">star wars</router-link></li>
-                        <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'luke' }}">luke</router-link></li>
-                        <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'dart+vader' }}">dart vader</router-link></li>
-                    </ul>
-            </div>
-        </transition>
-    </div>
+    <transition name="fade">
+      <div v-show="searchActive" class="home__trending">
+        <h2>Trending</h2>
+        <ul>
+          <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'star+wars' }}">star wars</router-link></li>
+          <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'skywalker' }}">skywalker</router-link></li>
+          <li><router-link :to="{ name: 'search-results', params: { searchTerm: 'dart+vader' }}">dart vader</router-link></li>
+        </ul>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
 import Search from '../components/Search.vue'
 
 export default {
-    name: 'home',
+  name: 'home',
 
-    data: () => ({
-        searchTerm: '',
-        searchActive: false
-    }),
+  data: () => ({
+    searchTerm: '',
+    searchActive: false
+  }),
 
-    components: {
-        Search
+  components: {
+    Search
+  },
+
+  methods: {
+    onSearch () {
+      if (this.searchTerm.length > 0) {
+        const searchTerm = this.searchTerm.replace(/\s/g, '+')
+        this.$router.push({ name: 'search-results', params: { searchTerm: searchTerm }})
+      }
     },
 
-    methods: {
-        onSearch () {
-            if (this.searchTerm.length > 0) {
-                const searchTerm = this.searchTerm.replace(/\s/g, '+')
-                this.$router.push({ name: 'search-results', params: { searchTerm: searchTerm }})
-            }
-        },
-
-        onFocus () {
-            this.searchActive = true
-        },
-
-        onBlur () {
-            this.searchActive = false
-        }
+    onFocus () {
+      this.searchActive = true
     },
 
-    head: {
-        title: {
-            inner: 'Search all the GIFs'
-        }
+    onBlur () {
+      this.searchActive = false
     }
+  },
+
+  head: {
+    title: {
+      inner: 'Search all the GIFs'
+    }
+  }
 }
 </script>
 
@@ -73,125 +74,125 @@ export default {
 @import '../scss/_functions.scss';
 
 .home {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }
+  max-width: screen(medium);
+  padding: 1rem;
+
+  &__headline {
+    color: palette(purple);
+    font: {
+      size: 5rem;
+      weight: 900;
+    }
     margin: {
-        top: 0;
-        right: auto;
-        bottom: 0;
-        left: auto;
+      top: 8rem;
+      bottom: 1rem;
     }
-    max-width: screen(medium);
-    padding: 1rem;
+    text-shadow: -3px 3px #FDD9FF;
 
-    &__headline {
-        color: palette(gray);
-        font: {
-            size: 5rem;
-            weight: 900;
-        }
-        margin: {
-            top: 8rem;
-            bottom: 1rem;
-        }
-        text-shadow: -3px 3px #FDD9FF;
-
-        @media screen and (max-width: screen(medium)) {
-            font-size: 4rem;
-            margin-top: 6rem;
-        }
-
-        @media screen and (max-width: screen(small)) {
-            font-size: 3rem;
-            margin-top: 4rem;
-        }
+    @media screen and (max-width: screen(medium)) {
+      font-size: 4rem;
+      margin-top: 6rem;
     }
 
-    .search {
-        background: {
-            size: 2rem;
-            position: 98% center;
-        }
-        box-shadow: 0 4px 6px RGBA(0, 0, 0, 0.35); 
-        height: 60px;
-        margin-bottom: 4rem;
-        width: 100%;
+    @media screen and (max-width: screen(small)) {
+      font-size: 3rem;
+      margin-top: 4rem;
+    }
+  }
 
-        &__input {
-            font-size: 1.25rem;
-            padding-left: 1rem;
+  .search {
+    background: {
+      size: 2rem;
+      position: 98% center;
+    }
+    box-shadow: 0 4px 6px RGBA(0, 0, 0, 0.35); 
+    height: 60px;
+    margin-bottom: 4rem;
+    width: 100%;
 
-        @media screen and (max-width: screen(small)) {
-            padding-left: .65rem;
-        }
+    &__input {
+      font-size: 1.25rem;
+      padding-left: 1rem;
+
+      @media screen and (max-width: screen(small)) {
+        padding-left: .65rem;
+      }
     }
 
     @media screen and (max-width: screen(medium)) {
-        height: 55px;      
+      height: 55px;      
 
-        &__input { font-size: 1.1rem; }
+      &__input { font-size: 1.1rem; }
     }
 
     @media screen and (max-width: screen(small)) {
-        background-size: 1.8rem;
-        box-shadow: 0 2px 4px RGBA(0, 0, 0, 0.35); 
-        height: 45px;
-        margin-bottom: 1rem;
+      background-size: 1.8rem;
+      box-shadow: 0 2px 4px RGBA(0, 0, 0, 0.35); 
+      height: 45px;
+      margin-bottom: 1rem;
 
-        &__input { font-size: 1.025rem; }
+      &__input { font-size: 1.025rem; }
     }
-    }
+  }
 
-    &__trending {
-        align-items: center;
-        display: flex;
+  &__trending {
+    align-items: center;
+    display: flex;
 
     @media screen and (max-width: screen(small)) {
-        flex-direction: column;
+      flex-direction: column;
     }
 
     h2 {
-        color: palette(gray, dark);
+      color: palette(gray, dark);
 
-        @media screen and (max-width: screen(small)) {
-            font-size: 1.5rem;
-            margin-bottom: .5rem;
-        }
+      @media screen and (max-width: screen(small)) {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+      }
     }
 
     ul {
-        margin: 0;
-        list-style-type: none;
+      margin: 0;
+      list-style-type: none;
 
-        @media screen and (max-width: screen(small)) {
-            padding-left: 0;
+      @media screen and (max-width: screen(small)) {
+        padding-left: 0;
 
-            li {
-                font-size: 1.1rem;
-                text-align: center;
-            }
+        li {
+          font-size: 1.1rem;
+          text-align: center;
         }
+      }
 
-        a {
-            color: palette(gray, dark);
-            text-decoration-color: palette(gray, light);
-            white-space: nowrap;
-            transition: color $transition;
+      a {
+        color: palette(gray, dark);
+        text-decoration-color: palette(gray, light);
+        white-space: nowrap;
+        transition: color $transition;
 
-            &:hover {
-                color: palette(gray);     
-            }
+        &:hover {
+          color: palette(purple);     
         }
+      }
     }
-    }
+  }
 }
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 1.5s;
+  transition: opacity 1.5s;
 }
 
 .fade-enter, .fade-leave-to, .fade-leave-active {
-    opacity: 0;
+  opacity: 0;
 }
 </style>

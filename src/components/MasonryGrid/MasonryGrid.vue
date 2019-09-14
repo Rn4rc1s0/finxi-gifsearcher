@@ -1,38 +1,38 @@
 <template>
-    <div class="masonry-grid">
-        <div
-            v-if="items.length > 0"
-            class="masonry-grid__container">
-        <masonry-grid-cell
-            v-for="item in items"
-            :key="item.id"
-            :id="item.id"
-            :src="item.images.fixed_width.url"
-            :smallSrc="item.images.downsized_still.url"
-            :data="item"
-            @onSelect="onSelect">
-        </masonry-grid-cell>
+  <div class="masonry-grid">
+    <div
+      v-if="items.length > 0"
+      class="masonry-grid__container">
+      <masonry-grid-cell
+        v-for="item in items"
+        :key="item.id"
+        :id="item.id"
+        :src="item.images.fixed_width.url"
+        :smallSrc="item.images.downsized_still.url"
+        :data="item"
+        @onSelect="onSelect">
+      </masonry-grid-cell>
     </div>
 
     <div
-        v-else-if="error"
-        class="masonry-grid__empty">
-        Error fetching GIFs.
-        <div>Try again later :(</div>
+      v-else-if="error"
+      class="masonry-grid__empty">
+      Error fetching GIFs.
+      <div>Try again later :(</div>
     </div>
     
     <div
-        v-else
-        class="masonry-grid__empty">
-        {{ emptyMessage }}
-        <div>Try searching for
-            <router-link :to="{ name: 'search-results', params: { searchTerm: 'starwars' }}">starwars</router-link> or
-            <router-link :to="{ name: 'search-results', params: { searchTerm: 'jarjarbinks' }}">jarjarbinks</router-link>.
-        </div>
+      v-else
+      class="masonry-grid__empty">
+      {{ emptyMessage }}
+      <div>Try searching for
+        <router-link :to="{ name: 'search-results', params: { searchTerm: 'pusheen' }}">pusheen</router-link> or
+        <router-link :to="{ name: 'search-results', params: { searchTerm: 'gladiator' }}">gladiator</router-link>.
+      </div>
     </div>
 
-        <canvas class="fireworks"></canvas>
-    </div>
+    <canvas class="fireworks"></canvas>
+  </div>
 </template>
 
 <script>

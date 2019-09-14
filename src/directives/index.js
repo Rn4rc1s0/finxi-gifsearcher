@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import 'semantic-ui-css/semantic.min.css';
 
 Vue.directive('click-outside', {
 	bind: function (el, binding, vnode) {
@@ -19,7 +18,7 @@ Vue.directive('favorite-animation', {
 	bind: function (el, binding, vnode) {
 
 	},
-	update: function(el) {
+	update: function (el) {
 
 	},
 	unbind: function (el) {

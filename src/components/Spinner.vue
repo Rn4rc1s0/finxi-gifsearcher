@@ -30,17 +30,20 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_functions.scss';
+
 .spinner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 70vh;
 }
+
 @keyframes spin {
 	100% {
 		transform: rotate(360deg);
 	}
 }
+
 .spinner__container {
 	position: relative;
 	display: inline-block;
@@ -49,17 +52,19 @@ export default {
 	overflow: hidden;
 	animation: spin 1s steps(12) infinite;
 }
+
 .icon__spinner {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+
 	svg {
 		width: 100%;
 		height: 100%;
 		background: inherit;
-		fill: palette(gray);
+		fill: palette(purple);
 		pointer-events: none;
 		transform: translateX(0);
 	}

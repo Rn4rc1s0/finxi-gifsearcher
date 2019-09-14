@@ -1,16 +1,14 @@
 import Vue from 'vue'
-// import Vuex from 'vuex'
-import SuiVue from 'semantic-ui-vue'
+import Vuex from 'vuex'
 
 import giphy from './modules/giphy'
 
-// Vue.use(Vuex)
-Vue.use(SuiVue)
+Vue.use(Vuex)
 
 const store = new Vuex.Store({
-    modules: {
-        giphy
-    }
+  modules: {
+    giphy
+  }
 })
 
 export default store

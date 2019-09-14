@@ -1,7 +1,7 @@
 const ENV = {
-    giphy: {
-        apikey: "FGSbLX9L52um911jI0oOlJkZ63EiLspO"
-    }
+	giphy: {
+	  apiKey: "dc6zaTOxFJmzC"
+	}
 }
 
 export default ENV

@@ -1,11 +1,11 @@
 // Colors
-$gray: #3D3D3D;
-$blue: #002F4D;
-$green: #415D35;
-$red: #9E0000;
+$purple: rgb(133, 7, 133);
+$blue: #60B9FF;
+$green: #00b27f;
+$red: #FA5744;
 $palettes: (
     black: (
-    	base: #222222
+        base: #333333
     ),
 
     blue: (
@@ -29,12 +29,12 @@ $palettes: (
         x-dark: darken($green, 20)
     ),
 
-    // purple: (
-    //     base: $purple,
-    //     dark: darken($purple, 10),
-    //     light: lighten($purple, 35),
-    //     x-dark: darken($purple, 20)
-    // ),
+    purple: (
+        base: $purple,
+        dark: darken($purple, 10),
+        light: lighten($purple, 35),
+        x-dark: darken($purple, 20)
+    ),
 
 	red: (
         base: $red,

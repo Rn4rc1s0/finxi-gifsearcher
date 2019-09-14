@@ -1,22 +1,19 @@
 import axios from 'axios'
-import '../settings.js'
-import ENV from '../settings.js'
-import 'semantic-ui-css/semantic.min.css';
+import '../settings'
 
 const instance = axios.create({
-    baseURL: 'https://api.giphy.com/v1/'
+  baseURL: 'https://api.giphy.com/v1/'
 })
 
 function fetch (endpoint) {
-    return instance.get(endpoint)
-    
+	return instance.get(endpoint)
 }
 
 export default {
-    search (searchTerm, limit = 20) {
-        return fetch(`/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${ENV.giphy.apikey}`)
-    },    
+	search (searchTerm, limit = 20) {
+	  return fetch(`/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${ENV.giphy.apiKey}`)
+	},
 	getGifById (gifId) {
-        return fetch(`/gifs/${gifId}?api_key=${ENV.giphy.apiKey}`)
+	  return fetch(`/gifs/${gifId}?api_key=${ENV.giphy.apiKey}`)
 	}
 }

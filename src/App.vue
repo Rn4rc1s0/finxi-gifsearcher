@@ -5,23 +5,24 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 
-  export default {
-    name: 'app',
-    created () {
-      thios.SET_FAVORITES()
-    },
+export default {
+  name: 'app',
 
-    methods: {
-      ...mapMutations('giphy', [
-        'SET_FAVORITES'
-      ])
-    }
+  created () {
+    this.SET_FAVORITES()
+  },
+
+  methods: {
+    ...mapMutations('giphy', [
+      'SET_FAVORITES'
+    ])
   }
+}
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 @import './scss/_variables.scss';
 @import './scss/_functions.scss';
 
@@ -30,16 +31,13 @@ body {
 }
 
 #app {
-  color:palette(black);
+  color: palette(black);
   font: {
     family: $sans-serif;
     size: 20px;
   }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
 }
