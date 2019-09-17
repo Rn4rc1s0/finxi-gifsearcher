@@ -1,6 +1,6 @@
 # develop stage
 FROM node:alpine as develop-stage
-WORKDIR /gifsearcherfinxi
+WORKDIR /gifsearcher
 COPY package*.json ./
 RUN npm install
 COPY . .
