@@ -26,8 +26,8 @@
       class="masonry-grid__empty">
       {{ emptyMessage }}
       <div>Try searching for
-        <router-link :to="{ name: 'search-results', params: { searchTerm: 'pusheen' }}">pusheen</router-link> or
-        <router-link :to="{ name: 'search-results', params: { searchTerm: 'gladiator' }}">gladiator</router-link>.
+        <router-link :to="{ name: 'search-results', params: { searchTerm: 'c3po' }}">C3PO</router-link> or
+        <router-link :to="{ name: 'search-results', params: { searchTerm: 'r2d2' }}">R2D2</router-link>.
       </div>
     </div>
 
