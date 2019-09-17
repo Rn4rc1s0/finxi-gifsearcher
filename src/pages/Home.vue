@@ -2,7 +2,7 @@
   <div
     id="home"
     class="home">
-    <img src="../assets/logo.png" alt="Logo StarWars" width="250px" height="200px">
+    <img src="../assets/logo.png" alt="Logo StarWars" width="200px" height="150px">
     <h1 class="home__headline">
       Gifsearcher
     </h1>
@@ -89,22 +89,22 @@ export default {
   &__headline {
     color: palette(purple);
     font: {
-      size: 5rem;
+      size: 3rem;
       weight: 900;
     }
     margin: {
-      top: 8rem;
+      top: 6rem;
       bottom: 1rem;
     }
     text-shadow: -3px 3px #FDD9FF;
 
     @media screen and (max-width: screen(medium)) {
-      font-size: 4rem;
+      font-size: 3rem;
       margin-top: 6rem;
     }
 
     @media screen and (max-width: screen(small)) {
-      font-size: 3rem;
+      font-size: 2rem;
       margin-top: 4rem;
     }
   }
@@ -112,11 +112,11 @@ export default {
   .search {
     background: {
       size: 2rem;
-      position: 98% center;
+      position: 92% center;
     }
     box-shadow: 0 4px 6px RGBA(0, 0, 0, 0.35); 
-    height: 60px;
-    margin-bottom: 4rem;
+    height: 50px;
+    margin-bottom: 2rem;
     width: 100%;
 
     &__input {
@@ -156,7 +156,7 @@ export default {
       color: palette(gray, dark);
 
       @media screen and (max-width: screen(small)) {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: .5rem;
       }
     }
