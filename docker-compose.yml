@@ -8,5 +8,5 @@ services:
     ports:
     - '8080:8080'
     volumes:
-    - '.:/app'
-    command: /bin/sh -c "npm serve"
+    - '.:/app1'
+    command: /bin/sh -c "npm start"

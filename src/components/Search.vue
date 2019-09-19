@@ -92,7 +92,7 @@ export default {
     border: 0;
     font: {
       family: $sans-serif;
-      size: 1rem;
+      size: .70rem;
       weight: 600;
     }
     padding: {
