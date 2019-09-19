@@ -1,5 +1,9 @@
 # finxi-gifsearcher
 
+# Docker
+```
+docker build -t {nome da maquina} .
+```
 # Docker-Compose
 ```
 docker-compose up --build
