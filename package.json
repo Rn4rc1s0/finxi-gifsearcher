@@ -16,7 +16,7 @@
     "docker": "^1.0.0",
     "docker-compose": "^0.22.2",
     "local-storage": "^1.4.2",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "vue": "^2.3.3",
     "vue-head": "^2.0.11",
     "vue-router": "^2.5.3",
